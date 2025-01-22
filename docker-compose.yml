@@ -1,0 +1,55 @@
+services:
+  db:
+    image: mariadb:latest
+    container_name: firefly_db
+    environment:
+      MARIADB_ROOT_PASSWORD: ${ROOT_PASSWORD}
+      MARIADB_DATABASE: ${DB_DATABASE}
+      MARIADB_USER: ${DB_USERNAME}
+      MARIADB_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - firefly_db:/var/lib/mysql
+
+  firefly:
+    image: fireflyiii/core:latest
+    container_name: firefly_iii
+    environment:
+      APP_KEY: ${APP_KEY}
+      APP_URL: ${APP_URL}
+      APP_DEBUG: ${APP_DEBUG}
+      DB_HOST: ${DB_HOST}
+      DB_DATABASE: ${DB_DATABASE}
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_CONNECTION: ${DB_CONNECTION}
+      DB_PORT: ${DB_PORT}
+    volumes:
+      - firefly_data:/var/www/html/storage/upload
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+
+  importer:
+    image: fireflyiii/data-importer:latest
+    container_name: firefly_iii_importer
+    environment:
+      FIREFLY_III_URL: ${FIREFLY_III_URL}
+      CLIENT_ID: ${CLIENT_ID}
+    depends_on:
+      - firefly
+    ports:
+      - "8181:8080"
+
+  cron:
+    image: alpine
+    container_name: firefly_iii_cron
+    environment:
+      STATIC_CRON_TOKEN: ${STATIC_CRON_TOKEN}
+    command: sh -c "echo \"0 3 * * * wget -qO- http://firefly:8080/api/v1/cron/\$STATIC_CRON_TOKEN; echo\" | crontab - && crond -f -L /dev/stdout"
+    depends_on:
+      - firefly
+
+volumes:
+  firefly_data:
+  firefly_db:
