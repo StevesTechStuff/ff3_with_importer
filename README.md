@@ -2,7 +2,7 @@
 
 #### Prerequisites
 1. Ensure **Portainer** is installed and running on your Docker host.
-2. Have the `docker-compose.yml` and `.env` files ready.
+2. Download the `.env` file.
 3. Use [random.org/strings](https://www.random.org/strings/) to generate secure, 32-character random strings.
 
 ---
@@ -16,24 +16,28 @@
    - Navigate to the **Stacks** section and click **Add Stack**.
    - Name the stack (e.g., `firefly`).
 
-3. **Upload the Compose File**
-   - Select the **Upload** option and upload the `docker-compose.yml` file.
+3. **Select Repository for Build Method**
+   - Select the **Repository** option 
+   - Repository URL=`https://github.com/StevesTechStuff/ff3_with_importer`
+   - Repository reference leave `blank`
+   - Compose path=`docker-compose.yml`
 
 4. **Load Environment Variables**
-   - Check the box for **Load environment variables from .env file**.
+   - Click the button to **Load environment variables from .env file**.
    - Upload the `.env` file.
 
 5. **Generate Secure Strings**
    - Go to [random.org/strings](https://www.random.org/strings/) and generate three secure, 32-character strings.
    - Replace the following in Portainer:
      - `ROOT_PASSWORD=String1` with a generated string.
-     - `APP_KEY=String2` with another generated string.
-     - `STATIC_CRON_TOKEN=String3` with a third generated string.
-     - 'DB_PASSWORD' with the forth generated string.
+     - `DB_PASSWORD=String2` with the second generated string. 
+     - `APP_KEY=String3` with the  third string.
+     - `STATIC_CRON_TOKEN=String4` with the last generated string.
+     - 
 
 6. **Update Additional Variables**
    - Set `TZ` to your desired timezone (e.g., `America/New_York`).
-   - Set 'FIREFLY_III_URL' to your servers address.
+   - set `FIREFLY_III_URL` to your `your-docker-host:8080`
 
 
 7. **Launch the Stack**
