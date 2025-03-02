@@ -32,13 +32,11 @@
      - `ROOT_PASSWORD=String1` with a generated string.
      - `DB_PASSWORD=String2` with the second generated string. 
      - `APP_KEY=String3` with the  third string.
-     - `STATIC_CRON_TOKEN=String4` with the last generated string.
-     - 
+     - `STATIC_CRON_TOKEN=String4` with the last generated string.     - 
 
 6. **Update Additional Variables**
    - Set `TZ` to your desired timezone (e.g., `America/New_York`).
    - set `FIREFLY_III_URL` to your `your-docker-host:8080`
-
 
 7. **Launch the Stack**
    - Click **Deploy the Stack** to start the services.
