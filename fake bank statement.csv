@@ -1,0 +1,12 @@
+﻿Date,Description,Amount,Currency,Account Name,Account Number,Transaction Type,Category,Notes
+2/1/2025,Grocery Store,-150.75,USD,Checking Account,123456789,Withdrawal,Groceries,Weekly grocery shopping
+2/3/2025,Salary Payment,3000,USD,Checking Account,123456789,Deposit,Income,Monthly salary
+2/5/2025,Electricity Bill,-120.5,USD,Checking Account,123456789,Withdrawal,Utilities,February electricity bill
+2/10/2025,Restaurant,-85.2,USD,Checking Account,123456789,Withdrawal,Dining,Dinner with friends
+2/15/2025,Gym Membership,-45,USD,Checking Account,123456789,Withdrawal,Fitness,Monthly gym membership
+2/20/2025,Internet Bill,-60,USD,Checking Account,123456789,Withdrawal,Utilities,February internet bill
+2/22/2025,Freelance Project,500,USD,Savings Account,987654321,Deposit,Income,Payment for freelance project
+2/25/2025,Movie Tickets,-30,USD,Checking Account,123456789,Withdrawal,Entertainment,Movie night
+2/28/2025,Rent Payment,-1200,USD,Checking Account,123456789,Withdrawal,Housing,March rent
+2/28/2025,Savings Transfer,-500,USD,Checking Account,123456789,Withdrawal,Transfers,Transfer to savings
+2/28/2025,Savings Transfer,500,USD,Savings Account,987654321,Deposit,Transfers,Transfer from checking
