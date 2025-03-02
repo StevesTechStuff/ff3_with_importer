@@ -29,10 +29,12 @@
      - `ROOT_PASSWORD=String1` with a generated string.
      - `APP_KEY=String2` with another generated string.
      - `STATIC_CRON_TOKEN=String3` with a third generated string.
+     - 'DB_PASSWORD' with the forth generated string.
 
 6. **Update Additional Variables**
-   - Set `DB_PASSWORD` to a strong, unique password.
    - Set `TZ` to your desired timezone (e.g., `America/New_York`).
+   - Set 'FIREFLY_III_URL' to your servers address.
+
 
 7. **Launch the Stack**
    - Click **Deploy the Stack** to start the services.
